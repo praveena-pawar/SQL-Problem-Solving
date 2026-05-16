@@ -34,3 +34,15 @@ WHERE department = 'IT' AND salary > 65000;
 SELECT AVG(salary) AS avr_salary
 FROM employees
 WHERE department = 'IT';
+
+
+
+
+-- 3 : Write an SQL query to display:
+-- department
+-- number_of_employees
+-- for each department.
+SELECT department, 
+		COUNT(*) AS number_of_employees
+FROM employees
+GROUP BY department;
