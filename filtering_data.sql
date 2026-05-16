@@ -27,3 +27,10 @@ INSERT INTO employees VALUES
 SELECT name, salary 
 FROM employees
 WHERE department = 'IT' AND salary > 65000;
+
+
+
+-- 2 : Write an SQL query to find the average salary of all employees in the IT department.
+SELECT AVG(salary) AS avr_salary
+FROM employees
+WHERE department = 'IT';
