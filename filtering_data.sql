@@ -15,3 +15,15 @@ INSERT INTO employees VALUES
 (3, "Charlie", "IT", 65000),
 (4, "David", "Finance", 55000),
 (5, "Eva", "IT", 80000);
+
+
+
+
+-- 1 :Write an SQL query to display the:
+-- name
+-- salary
+-- of all employees who belong to the IT department and have a salary greater than 65000.
+
+SELECT name, salary 
+FROM employees
+WHERE department = 'IT' AND salary > 65000;
