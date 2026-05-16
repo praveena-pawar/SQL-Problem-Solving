@@ -46,3 +46,15 @@ SELECT department,
 		COUNT(*) AS number_of_employees
 FROM employees
 GROUP BY department;
+
+
+
+-- 4 : Write an SQL query to display:
+-- department
+-- average_salary
+-- for departments whose average salary is greater than 60,000.
+SELECT department, 
+	AVG(salary) AS average_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 60000;
