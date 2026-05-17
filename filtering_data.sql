@@ -58,3 +58,12 @@ SELECT department,
 FROM employees
 GROUP BY department
 HAVING AVG(salary) > 60000;
+
+
+
+-- 5 : Write an SQL query to display, for each department:
+-- department
+-- total_salary
+-- average_salary
+-- highest_salary
+-- lowest_salary
