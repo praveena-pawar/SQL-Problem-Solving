@@ -67,3 +67,10 @@ HAVING AVG(salary) > 60000;
 -- average_salary
 -- highest_salary
 -- lowest_salary
+SELECT department, 
+	SUM(salary) AS total_salary,
+    AVG(salary) AS average_salary,
+    MAX(salary) AS highest_salary,
+    MIN(salary) AS lowest_salary
+FROM employees
+GROUP BY department;
