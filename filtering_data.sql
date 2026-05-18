@@ -81,3 +81,13 @@ GROUP BY department;
 -- 6 Write an SQL query to display all unique department names from the employees table
 SELECT DISTINCT department
 FROM employees;
+
+
+
+-- 7 Write an SQL query to display:
+-- name
+-- salary
+-- for all employees, sorted by salary in descending order.
+SELECT 	name, salary
+	FROM employees
+ORDER BY salary DESC;
