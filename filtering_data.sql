@@ -109,3 +109,10 @@ LIMIT 2;
 SELECT 	name, salary
 	FROM employees
 WHERE salary BETWEEN 50000 AND 75000;
+
+
+
+-- 10 Write an SQL query to display:
+-- name
+-- department
+-- for employees who belong to either the IT or HR departments.
