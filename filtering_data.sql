@@ -99,3 +99,13 @@ SELECT 	name, salary
 	FROM employees
 ORDER BY salary DESC
 LIMIT 2;
+
+
+
+-- 9 Write an SQL query to display:
+-- name
+-- salary
+-- for employees whose salary is between 50,000 and 75,000 (inclusive).
+SELECT 	name, salary
+	FROM employees
+WHERE salary BETWEEN 50000 AND 75000;
