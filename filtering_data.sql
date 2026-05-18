@@ -74,3 +74,10 @@ SELECT department,
     MIN(salary) AS lowest_salary
 FROM employees
 GROUP BY department;
+
+
+
+
+-- 6 Write an SQL query to display all unique department names from the employees table
+SELECT DISTINCT department
+FROM employees;
