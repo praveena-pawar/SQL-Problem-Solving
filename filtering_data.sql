@@ -91,3 +91,11 @@ FROM employees;
 SELECT 	name, salary
 	FROM employees
 ORDER BY salary DESC;
+
+
+
+-- 8 Write an SQL query to display the top 2 highest-paid employees.
+SELECT 	name, salary
+	FROM employees
+ORDER BY salary DESC
+LIMIT 2;
