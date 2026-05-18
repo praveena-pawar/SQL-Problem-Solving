@@ -116,3 +116,6 @@ WHERE salary BETWEEN 50000 AND 75000;
 -- name
 -- department
 -- for employees who belong to either the IT or HR departments.
+SELECT name, department
+	FROM employees
+WHERE department IN('IT', 'HR');
