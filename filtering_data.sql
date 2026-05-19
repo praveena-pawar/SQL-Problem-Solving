@@ -17,6 +17,28 @@ INSERT INTO employees VALUES
 (5, "Eva", "IT", 80000);
 
 
+-- Add the manager_id column to your existing employees table
+ALTER TABLE employees
+ADD manager_id INT;
+
+-- Update the existing rows with manager_id values
+UPDATE employees
+SET manager_id = CASE
+    WHEN emp_id = 1 THEN NULL
+    WHEN emp_id = 2 THEN 1
+    WHEN emp_id = 3 THEN 1
+    WHEN emp_id = 4 THEN NULL
+    WHEN emp_id = 5 THEN 2
+END
+WHERE emp_id IN (1, 2, 3, 4, 5);
+
+
+-- Verify the updated data
+SELECT *
+FROM employees;
+
+
+
 
 
 -- 1 :Write an SQL query to display the:
