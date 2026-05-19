@@ -148,3 +148,11 @@ WHERE department IN('IT', 'HR');
 SELECT name 
 FROM employees
 WHERE name LIKE 'A%';
+
+
+
+
+-- 12 Write an SQL query to display the names of employees who do not have a manager
+SELECT name
+FROM employees
+WHERE manager_id IS NULL;
