@@ -119,3 +119,10 @@ WHERE salary BETWEEN 50000 AND 75000;
 SELECT name, department
 	FROM employees
 WHERE department IN('IT', 'HR');
+
+
+
+-- 11 Write an SQL query to display the names of employees whose names start with the letter 'A'.
+SELECT name 
+FROM employees
+WHERE name LIKE 'A%';
