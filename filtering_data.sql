@@ -156,3 +156,24 @@ WHERE name LIKE 'A%';
 SELECT name
 FROM employees
 WHERE manager_id IS NULL;
+
+
+
+
+-- 13 Write an SQL query to display:
+-- name
+-- salary
+-- salary_category
+-- where:
+-- Salary >= 70000 → 'High'
+-- Salary between 50000 and 69999 → 'Medium'
+-- Salary < 50000 → 'Low'
+SELECT 
+    name,
+    salary,
+    CASE
+        WHEN salary >= 70000 THEN 'High'
+        WHEN salary BETWEEN 50000 AND 69999 THEN 'Medium'
+        ELSE 'Low'
+    END AS salary_category
+FROM employees;
