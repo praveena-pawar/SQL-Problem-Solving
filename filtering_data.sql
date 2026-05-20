@@ -171,3 +171,12 @@ SELECT name, department_name
 FROM employees e
 INNER JOIN departments d
 ON e.department_id = d.department_id;
+
+
+
+
+-- 15 Write an SQL query to display:
+-- name
+-- salary
+-- department_name
+-- for employees who work in the IT department.
