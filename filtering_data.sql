@@ -180,3 +180,8 @@ ON e.department_id = d.department_id;
 -- salary
 -- department_name
 -- for employees who work in the IT department.
+SELECT name, salary, department_name
+FROM employees e
+INNER join departments d
+ON e.department_id = d.department_id
+WHERE department_name = 'IT';
