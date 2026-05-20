@@ -159,3 +159,15 @@ SELECT
         ELSE 'Low'
     END AS salary_category
 FROM employees;
+
+
+
+
+-- 14 Write an SQL query to display:
+-- name
+-- department_name
+-- for all employees.
+SELECT name, department_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
