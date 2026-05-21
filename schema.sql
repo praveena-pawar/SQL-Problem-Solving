@@ -34,6 +34,7 @@ VALUES
 (4, 'David',   55000, NULL, 3),  -- Finance
 (5, 'Eva',     80000, 2,    2);  -- IT
 
+
 -- Verify data
 SELECT *
 FROM employees;
