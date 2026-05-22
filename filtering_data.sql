@@ -197,3 +197,8 @@ SELECT department_name, name
 FROM employees e
 LEFT JOIN departments d
 ON e.department_id = d.department_id;
+
+
+
+
+-- 17 Write an SQL query to display the names of departments that do not have any employees.
