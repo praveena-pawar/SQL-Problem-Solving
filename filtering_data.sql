@@ -185,3 +185,15 @@ FROM employees e
 INNER join departments d
 ON e.department_id = d.department_id
 WHERE department_name = 'IT';
+
+
+
+
+-- 16 Write an SQL query to display:
+-- department_name
+-- name
+-- for all departments, including departments that do not have any employees.
+SELECT department_name, name
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
