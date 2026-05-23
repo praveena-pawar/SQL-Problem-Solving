@@ -220,3 +220,13 @@ FROM departments d
 LEFT JOIN employees e
 ON d.department_id = e.department_id
 GROUP BY department_name;
+
+
+
+
+-- 19 Now we will use the employees table to connect employees with their managers.
+SELECT e.name AS employees,
+       m.name AS manager
+FROM employees e
+JOIN employees m
+ON e.manager_id = m.emp_id ;
