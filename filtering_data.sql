@@ -207,3 +207,16 @@ FROM departments d
 LEFT JOIN employees e
 ON d.department_id = e.department_id
 WHERE e.emp_id IS NULL;
+
+
+
+
+-- 18 Write an SQL query to display:
+-- department_name
+-- number_of_employees
+-- for each department, including departments with zero employees.
+SELECT department_name, COUNT(emp_id ) AS number_of_employees
+FROM departments d
+LEFT JOIN employees e
+ON d.department_id = e.department_id
+GROUP BY department_name;
