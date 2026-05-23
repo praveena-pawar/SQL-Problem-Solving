@@ -230,3 +230,17 @@ SELECT e.name AS employees,
 FROM employees e
 JOIN employees m
 ON e.manager_id = m.emp_id ;
+
+
+
+
+-- 20 Write an SQL query to display:
+-- employee name
+-- department name
+-- salary
+-- for employees whose salary is greater than 60000.
+SELECT name, department_name, salary 
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+WHERE salary > 60000;
