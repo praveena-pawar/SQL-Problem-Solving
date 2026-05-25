@@ -283,3 +283,17 @@ INNER JOIN departments d
 ON e.department_id = d.department_id
 INNER JOIN projects p
 ON e.emp_id = p.emp_id;
+
+
+
+
+-- 24 Write an SQL query to display:
+-- department_name
+-- average_salary
+-- for each department.
+SELECT department_name,
+		AVG(salary) AS  average_salary
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+GROUP BY  department_name;
