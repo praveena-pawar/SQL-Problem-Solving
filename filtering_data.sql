@@ -256,3 +256,13 @@ SELECT name, department_name
 FROM employees e
 RIGHT JOIN departments d
 ON e.department_id = d.department_id;
+
+
+
+
+-- 22 Write an SQL query to display all possible combinations of:
+-- employee names
+-- department names
+SELECT name, department_name
+FROM employees e
+CROSS JOIN departments d;
