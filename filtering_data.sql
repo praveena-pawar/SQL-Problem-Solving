@@ -266,3 +266,20 @@ ON e.department_id = d.department_id;
 SELECT name, department_name
 FROM employees e
 CROSS JOIN departments d;
+
+
+
+
+-- 23 Write an SQL query to display:
+-- employee name
+-- department name
+-- project name
+-- for all employees.
+SELECT e.name AS employee_name, 
+		department_name, 
+		project_name
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+INNER JOIN projects p
+ON e.emp_id = p.emp_id;
