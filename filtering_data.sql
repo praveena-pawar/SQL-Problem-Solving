@@ -297,3 +297,18 @@ FROM employees e
 INNER JOIN departments d
 ON e.department_id = d.department_id
 GROUP BY  department_name;
+
+
+
+
+-- 25 Write an SQL query to display:
+-- department_name
+-- number_of_employees
+-- for departments having more than 1 employee.
+SELECT department_name,
+		COUNT(emp_id ) AS  number_of_employees
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+GROUP BY  department_name
+HAVING COUNT(emp_id ) > 1 ;
