@@ -35,9 +35,29 @@ VALUES
 (5, 'Eva',     80000, 2,    2);  -- IT
 
 
+CREATE TABLE projects (
+    project_id INT PRIMARY KEY,
+    project_name VARCHAR(30),
+    emp_id INT,
+    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
+
+INSERT INTO projects VALUES
+(101, 'AI Chatbot', 2),
+(102, 'E-Commerce Website', 3),
+(103, 'Finance Dashboard', 4),
+(104, 'HR Portal', 1),
+(105, 'ML Prediction System', 5);
+
+
 -- Verify data
 SELECT *
 FROM employees;
 
 SELECT *
 FROM departments;
+
+SELECT * 
+FROM projects;
+
+
