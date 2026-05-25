@@ -244,3 +244,15 @@ FROM employees e
 INNER JOIN departments d
 ON e.department_id = d.department_id
 WHERE salary > 60000;
+
+
+
+
+-- 21 Write an SQL query to display:
+-- name
+-- department_name
+-- for all departments, including departments that do not have employees.
+SELECT name, department_name 
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
