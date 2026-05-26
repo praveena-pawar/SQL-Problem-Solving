@@ -329,4 +329,12 @@ WHERE salary > (SELECT AVG(salary)
 
 
 
+
 -- 27 Write an SQL query to display the names of employees who work in departments where the department name is 'IT'.
+SELECT name
+FROM employees
+WHERE department_id IN (
+    SELECT department_id
+    FROM departments
+    WHERE department_name = 'IT'
+);
