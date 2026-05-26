@@ -346,3 +346,12 @@ WHERE department_id IN (
 -- salary
 -- department_id
 -- for employees whose salary is greater than the average salary of their own department.
+SELECT e1.name,
+       e1.salary,
+       e1.department_id
+FROM employees e1
+WHERE e1.salary > (
+    SELECT AVG(e2.salary)
+    FROM employees e2
+    WHERE e1.department_id = e2.department_id
+);
