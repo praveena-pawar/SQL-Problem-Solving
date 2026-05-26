@@ -312,3 +312,16 @@ INNER JOIN departments d
 ON e.department_id = d.department_id
 GROUP BY  department_name
 HAVING COUNT(emp_id ) > 1 ;
+
+
+
+
+-- 26 Write an SQL query to display:
+-- employee names
+-- salary
+-- for employees whose salary is greater than the average salary of all employees.
+SELECT name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary)
+		FROM employees
+);
