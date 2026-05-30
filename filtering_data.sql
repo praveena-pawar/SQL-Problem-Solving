@@ -365,3 +365,7 @@ WHERE EXISTS (
     FROM employees e
     WHERE e.department_id = d.department_id
 );
+
+
+
+-- 30 Write an SQL query to display department names that do not have any employees.
