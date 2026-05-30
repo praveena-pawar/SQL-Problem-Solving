@@ -358,3 +358,10 @@ WHERE e1.salary > (
 
 
 -- 29 Write an SQL query to display department names that have at least one employee.
+SELECT d.department_name
+FROM departments d
+WHERE EXISTS (
+    SELECT 1
+    FROM employees e
+    WHERE e.department_id = d.department_id
+);
