@@ -389,3 +389,8 @@ FROM employees
 WHERE salary = (SELECT max(salary)
 			FROM employees
 );
+
+
+
+
+-- 32 — Second Highest Salary
