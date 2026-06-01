@@ -400,3 +400,15 @@ WHERE salary < (
     SELECT MAX(salary)
     FROM employees
 );
+
+
+
+
+-- 33 — Employee(s) with Second Highest Salary
+SELECT name, salary
+FROM employees
+WHERE salary = (SELECT salary
+			FROM employees
+            ORDER BY salary desc
+            LIMIT 1 OFFSET 1
+);
