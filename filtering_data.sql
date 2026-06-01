@@ -376,3 +376,16 @@ WHERE NOT EXISTS (
     FROM employees e
     WHERE e.department_id = d.department_id
 );
+
+
+
+
+-- 31 Write an SQL query to display:
+-- employee name
+-- salary
+-- for employees who earn the highest salary in the company.
+SELECT name, salary 
+FROM employees
+WHERE salary = (SELECT max(salary)
+			FROM employees
+);
