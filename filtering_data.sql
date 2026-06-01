@@ -412,3 +412,8 @@ WHERE salary = (SELECT salary
             ORDER BY salary desc
             LIMIT 1 OFFSET 1
 );
+
+
+
+
+-- 34 — Department with Highest Average Salary
