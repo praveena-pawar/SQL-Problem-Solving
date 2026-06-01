@@ -394,3 +394,9 @@ WHERE salary = (SELECT max(salary)
 
 
 -- 32 — Second Highest Salary
+SELECT MAX(salary)
+FROM employees
+WHERE salary < (
+    SELECT MAX(salary)
+    FROM employees
+);
