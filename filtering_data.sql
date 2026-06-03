@@ -430,3 +430,17 @@ LIMIT 1;
 
 
 -- 35 — Departments with More Than Average Number of Employees
+SELECT d.department_name,
+       COUNT(e.emp_id) AS number_of_employees
+FROM employees e
+JOIN departments d
+ON e.department_id = d.department_id
+GROUP BY d.department_name
+HAVING COUNT(e.emp_id) > (
+    SELECT AVG(emp_count)
+    FROM (
+        SELECT COUNT(emp_id) AS emp_count
+        FROM employees
+        GROUP BY department_id
+    ) AS dept_counts
+);
