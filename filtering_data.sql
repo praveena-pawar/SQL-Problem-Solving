@@ -425,3 +425,8 @@ ON e.department_id = d.department_id
 GROUP BY d.department_name
 ORDER BY average_salary DESC
 LIMIT 1;
+
+
+
+
+-- 35 — Departments with More Than Average Number of Employees
