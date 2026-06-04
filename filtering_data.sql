@@ -444,3 +444,4 @@ HAVING COUNT(e.emp_id) > (
         GROUP BY department_id
     ) AS dept_counts
 );
+
