@@ -447,3 +447,12 @@ HAVING COUNT(e.emp_id) > (
 
 
 
+
+-- 36 Write an SQL query using a CTE (WITH) to display:
+
+-- employee name
+-- salary
+
+-- for employees whose salary is greater than 60000.
+
+
