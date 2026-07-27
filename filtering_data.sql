@@ -449,10 +449,20 @@ HAVING COUNT(e.emp_id) > (
 
 
 -- 36 Write an SQL query using a CTE (WITH) to display:
-
 -- employee name
 -- salary
-
 -- for employees whose salary is greater than 60000.
-
-
+SELECT d.department_name,
+       COUNT(e.emp_id) AS number_of_employees
+FROM employees e
+JOIN departments d
+ON e.department_id = d.department_id
+GROUP BY d.department_name
+HAVING COUNT(e.emp_id) > (
+    SELECT AVG(emp_count)
+    FROM (
+        SELECT COUNT(emp_id) AS emp_count
+        FROM employees
+        GROUP BY department_id
+    ) AS dept_counts
+);
