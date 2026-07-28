@@ -3,3 +3,9 @@ SELECT emp_name, salary
 FROM employees
 WHERE salary > 55000
 ORDER BY salary DESC;
+
+
+-- 2: Write an SQL query to display all unique department_id values from the employees table.
+SELECT DISTINCT department_id
+FROM employees
+ORDER BY department_id;
