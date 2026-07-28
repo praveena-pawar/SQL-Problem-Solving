@@ -9,3 +9,10 @@ ORDER BY salary DESC;
 SELECT DISTINCT department_id
 FROM employees
 ORDER BY department_id;
+
+
+-- 3: for employees whose salary is between 50,000 and 75,000 (inclusive).
+SELECT emp_name, salary 
+FROM employees
+WHERE salary BETWEEN 50000 AND 75000
+ORDER BY salary DESC, emp_name;
