@@ -16,3 +16,10 @@ SELECT emp_name, salary
 FROM employees
 WHERE salary BETWEEN 50000 AND 75000
 ORDER BY salary DESC, emp_name;
+
+
+-- 4: Display all employee details except those who belong to department 102.
+SELECT * 
+FROM employees 
+WHERE department_id <> 102
+ORDER BY department_id, salary DESC;
