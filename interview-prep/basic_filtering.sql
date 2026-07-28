@@ -33,3 +33,12 @@ FROM employees
 WHERE salary >= 55000
   AND department_id IN (101, 103)
 ORDER BY department_id, salary DESC;
+
+
+-- 6: for employees who satisfy either of these conditions:
+-- Salary is greater than 75,000
+-- OR they belong to department 103
+SELECT emp_name, salary, department_id
+FROM employees
+WHERE salary > 75000 OR department_id = 103
+ORDER BY salary DESC, emp_name;
