@@ -49,3 +49,12 @@ SELECT emp_name, salary, hire_date
 FROM employees
 WHERE hire_date > '2021-01-01' AND salary <> 50000
 ORDER BY hire_date DESC, salary DESC;
+
+
+-- 8: Return only employees who:
+-- belong to department 101 or 102, and
+-- have a salary less than 70,000.
+SELECT emp_name, department_id, salary
+FROM employees
+WHERE department_id IN (101, 102) AND salary < 70000
+ORDER BY department_id, salary, emp_name;
