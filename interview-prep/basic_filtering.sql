@@ -77,3 +77,14 @@ WHERE
     OR
     (hire_date < '2021-01-01')
 ORDER BY hire_date, salary DESC;
+
+
+-- 11: Display:
+-- department_id
+-- the total number of employees in each department
+SELECT department_id,
+       COUNT(*) AS employee_count
+FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > 1
+ORDER BY employee_count DESC, department_id;
