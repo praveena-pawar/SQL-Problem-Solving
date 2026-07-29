@@ -65,3 +65,15 @@ SELECT emp_name, department_id, salary
 FROM employees
 WHERE department_id <> 103 AND salary NOT BETWEEN 50000 and 70000
 ORDER BY salary DESC, emp_name;
+
+
+-- 10: Return employees who satisfy either of the following:
+-- They belong to department 101 and earn more than 60,000.
+-- OR they were hired before January 1, 2021.
+SELECT emp_name, salary, department_id
+FROM employees
+WHERE 
+	(department_id = 101 AND salary > 60000)
+    OR
+    (hire_date < '2021-01-01')
+ORDER BY hire_date, salary DESC;
