@@ -98,3 +98,16 @@ FROM employees
 GROUP BY department_id
 HAVING AVG(salary) > 55000
 ORDER BY avg_salary DESC, department_id;
+
+
+-- 13: Display:
+-- department_id
+-- the highest salary in each department
+-- the lowest salary in each department
+SELECT department_id,
+	MAX(salary) AS highest_salary,
+    MIN(salary) AS lowest_salary
+FROM employees
+GROUP BY department_id
+HAVING MAX(salary) >= 75000
+ORDER BY highest_salary DESC, department_id;
