@@ -111,3 +111,14 @@ FROM employees
 GROUP BY department_id
 HAVING MAX(salary) >= 75000
 ORDER BY highest_salary DESC, department_id;
+
+
+-- 14: Display:
+-- department_id
+-- the total salary paid to employees in each department
+select department_id,
+	SUM(salary) AS total_salary
+FROM employees
+GROUP BY department_id
+HAVING SUM(salary) > 100000
+ORDER BY total_salary DESC, department_id;
