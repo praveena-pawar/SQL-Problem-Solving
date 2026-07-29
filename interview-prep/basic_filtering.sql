@@ -42,3 +42,10 @@ SELECT emp_name, salary, department_id
 FROM employees
 WHERE salary > 75000 OR department_id = 103
 ORDER BY salary DESC, emp_name;
+
+
+-- 7: for employees who were hired after January 1, 2021 and whose salary is not equal to 50,000.
+SELECT emp_name, salary, hire_date
+FROM employees
+WHERE hire_date > '2021-01-01' AND salary <> 50000
+ORDER BY hire_date DESC, salary DESC;
