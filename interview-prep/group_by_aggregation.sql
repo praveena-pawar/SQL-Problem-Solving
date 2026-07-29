@@ -1,4 +1,50 @@
--- 15: For each department, display:
+
+-- 1: Display:
+-- department_id
+-- the total number of employees in each department
+SELECT department_id,
+       COUNT(*) AS employee_count
+FROM employees
+GROUP BY department_id
+HAVING COUNT(*) > 1
+ORDER BY employee_count DESC, department_id;
+
+
+-- 2: department_id
+-- the average salary of employees in each department
+SELECT department_id,
+       ROUND(AVG(salary), 2) AS avg_salary
+FROM employees
+GROUP BY department_id
+HAVING AVG(salary) > 55000
+ORDER BY avg_salary DESC, department_id;
+
+
+-- 3: Display:
+-- department_id
+-- the highest salary in each department
+-- the lowest salary in each department
+SELECT department_id,
+	MAX(salary) AS highest_salary,
+    MIN(salary) AS lowest_salary
+FROM employees
+GROUP BY department_id
+HAVING MAX(salary) >= 75000
+ORDER BY highest_salary DESC, department_id;
+
+
+-- 4: Display:
+-- department_id
+-- the total salary paid to employees in each department
+select department_id,
+	SUM(salary) AS total_salary
+FROM employees
+GROUP BY department_id
+HAVING SUM(salary) > 100000
+ORDER BY total_salary DESC, department_id;
+
+
+-- 5: For each department, display:
 -- department_id
 -- Total number of employees
 -- Average salary (rounded to 2 decimal places)
