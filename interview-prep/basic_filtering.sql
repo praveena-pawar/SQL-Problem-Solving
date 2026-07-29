@@ -58,3 +58,10 @@ SELECT emp_name, department_id, salary
 FROM employees
 WHERE department_id IN (101, 102) AND salary < 70000
 ORDER BY department_id, salary, emp_name;
+
+
+-- 9: Return employees who do not belong to department 103 and whose salary is not between 50,000 and 70,000.
+SELECT emp_name, department_id, salary
+FROM employees
+WHERE department_id <> 103 AND salary NOT BETWEEN 50000 and 70000
+ORDER BY salary DESC, emp_name;
