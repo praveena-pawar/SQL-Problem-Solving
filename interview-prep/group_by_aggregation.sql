@@ -110,3 +110,22 @@ HAVING SUM(salary) >= 150000
 	AND
     MAX(salary) >= 75000
 ORDER BY total_salary DESC, highest_salary DESC, department_id;
+
+
+-- 9: Requirements
+-- Consider only employees whose hire_date is before '2023-01-01'.
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is at least 2, and
+-- total_salary is greater than 100000.
+SELECT department_id,	
+	COUNT(*)  AS employee_count,
+	ROUND(AVG(salary), 2) AS average_salary,
+    SUM(salary) AS total_salary
+FROM employees
+WHERE hire_date < '2023-01-01'
+GROUP BY department_id
+HAVING COUNT(*) >= 2
+	AND
+    SUM(salary) > 100000
+ORDER BY employee_count DESC, total_salary DESC, department_id;
