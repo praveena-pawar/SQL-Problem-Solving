@@ -61,7 +61,7 @@ HAVING COUNT(*) >= 2
 ORDER BY employee_count DESC, avg_salary DESC, department_id;
 
 
--- 16: Requirements
+-- 6: Requirements
 -- Count only employees whose salary is greater than or equal to 55,000.
 -- Show only departments where the total salary of these employees is greater than 120,000.
 -- Name the columns:
@@ -75,3 +75,21 @@ WHERE salary >= 55000
 GROUP BY department_id
 HAVING SUM(salary) > 120000
 ORDER BY total_salary DESC, employee_count DESC, department_id;
+
+
+-- 7: Requirements
+-- Consider only employees who were hired on or after '2021-01-01'.
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- the number of employees is at least 2, and
+-- the average salary is greater than 55,000.
+SELECT department_id,
+	COUNT(*)  AS employee_count,
+	ROUND(AVG(salary), 2) AS average_salary
+FROM employees
+WHERE hire_date >= '2021-01-01'
+GROUP BY department_id 
+HAVING AVG(salary) > 55000
+	AND 
+    COUNT(*) >= 2
+ORDER BY average_salary DESC, employee_count DESC, department_id;
