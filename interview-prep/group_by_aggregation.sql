@@ -59,3 +59,19 @@ FROM employees
 GROUP BY department_id
 HAVING COUNT(*) >= 2
 ORDER BY employee_count DESC, avg_salary DESC, department_id;
+
+
+-- 16: Requirements
+-- Count only employees whose salary is greater than or equal to 55,000.
+-- Show only departments where the total salary of these employees is greater than 120,000.
+-- Name the columns:
+-- employee_count
+-- total_salary
+SELECT department_id,
+	COUNT(*)  AS employee_count,
+	SUM(salary) AS total_salary
+FROM employees
+WHERE salary >= 55000
+GROUP BY department_id
+HAVING SUM(salary) > 120000
+ORDER BY total_salary DESC, employee_count DESC, department_id;
