@@ -129,3 +129,23 @@ HAVING COUNT(*) >= 2
 	AND
     SUM(salary) > 100000
 ORDER BY employee_count DESC, total_salary DESC, department_id;
+
+
+-- 20: Requirements
+-- Consider only employees whose salary is between 50,000 and 80,000 (inclusive).
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is at least 2, and
+-- average_salary is greater than or equal to 60,000.
+SELECT department_id,	
+	COUNT(*)  AS employee_count,
+	ROUND(AVG(salary), 2) AS average_salary,
+    MAX(salary) AS highest_salary,
+    MIN(salary) AS lowest_salary
+FROM employees
+WHERE salary BETWEEN 50000 AND 80000
+GROUP BY department_id  
+HAVING COUNT(*) >= 2
+	AND 
+    ROUND(AVG(salary), 2) >= 60000
+ORDER BY average_salary DESC, highest_salary  DESC, department_id;
