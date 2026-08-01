@@ -93,3 +93,20 @@ HAVING AVG(salary) > 55000
 	AND 
     COUNT(*) >= 2
 ORDER BY average_salary DESC, employee_count DESC, department_id;
+
+
+-- 8: Consider only employees whose salary is at least 50,000.
+-- Show only departments where:
+-- the total salary is greater than or equal to 150,000, and
+-- the highest salary is at least 75,000.
+SELECT department_id,
+	COUNT(*)  AS employee_count,
+	SUM(salary) AS total_salary,
+    MAX(salary) AS highest_salary
+FROM employees
+WHERE salary >= 50000
+GROUP BY department_id
+HAVING SUM(salary) >= 150000
+	AND
+    MAX(salary) >= 75000
+ORDER BY total_salary DESC, highest_salary DESC, department_id;
