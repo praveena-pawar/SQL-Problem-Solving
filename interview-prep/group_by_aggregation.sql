@@ -149,3 +149,21 @@ HAVING COUNT(*) >= 2
 	AND 
     ROUND(AVG(salary), 2) >= 60000
 ORDER BY average_salary DESC, highest_salary  DESC, department_id;
+
+
+-- 21: Consider only employees hired on or after '2021-01-01'.
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is between 2 and 4 (inclusive).
+-- total_salary is at least 150000.
+SELECT department_id,
+	COUNT(*)  AS employee_count,
+    SUM(salary) AS total_salary,
+    ROUND(AVG(salary), 2) AS average_salary
+FROM employees
+WHERE hire_date >= '2021-01-01'
+GROUP BY department_id
+HAVING COUNT(*) BETWEEN  2 AND 4
+	AND 
+    SUM(salary) >= 150000
+ORDER BY total_salary DESC, average_salary  DESC, department_id;
