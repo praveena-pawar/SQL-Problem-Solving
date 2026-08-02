@@ -188,3 +188,26 @@ HAVING  MAX(salary) >= 80000 AND MIN(salary) > 50000
 	AND 
     COUNT(*)  >= 2
 ORDER BY highest_salary DESC, average_salary DESC, department_id;
+
+
+-- 13: Requirements
+-- Consider only employees:
+-- hired before '2024-01-01', and
+-- with salary between 50,000 and 90,000 (inclusive).
+-- Round average_salary to 2 decimal places.
+-- Show only departments where:
+-- employee_count is at least 3.
+-- total_salary is greater than 180000.
+-- highest_salary is at least 85000.
+SELECT department_id,	
+	COUNT(*)  AS employee_count,
+    SUM(salary) AS total_salary,
+    MAX(salary) AS highest_salary,
+    ROUND(AVG(salary), 2) AS average_salary
+FROM employees
+WHERE (hire_date < '2024-01-01') AND (salary BETWEEN 50000 AND 90000)
+GROUP BY department_id
+HAVING COUNT(*) >= 3
+	AND 
+	SUM(salary) > 180000 AND MAX(salary) >= 85000
+ORDER BY total_salary DESC, highest_salary DESC, department_id;
