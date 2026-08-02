@@ -213,7 +213,7 @@ HAVING COUNT(*) >= 3
 ORDER BY total_salary DESC, highest_salary DESC, department_id;
 
 
--- 24: Requirements
+-- 14: Requirements
 -- Consider only employees:
 -- hired on or after '2020-01-01'
 -- with salary greater than 40,000
