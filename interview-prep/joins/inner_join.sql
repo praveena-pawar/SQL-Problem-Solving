@@ -38,3 +38,22 @@ WHERE e.salary >= 50000
 GROUP BY d.department_id, d.department_name
 HAVING COUNT(e.emp_id) >= 2
 ORDER BY average_salary DESC, department_name;
+
+
+-- 28: Requirements
+-- Show only employees who:
+-- belong to Engineering or HR.
+-- were hired on or after '2021-01-01'.
+-- have a salary greater than or equal to 55,000.
+-- Sort the result by:
+-- department_name (ascending)
+-- salary (descending)
+-- emp_name (ascending)
+SELECT e.emp_name, d.department_name, e.salary, e.hire_date
+FROM employees1 e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+WHERE d.department_name IN ('Engineering', 'HR')
+  AND e.hire_date >= '2021-01-01'
+  AND e.salary >= 55000
+ORDER BY d.department_name, e.salary DESC, e.emp_name;
