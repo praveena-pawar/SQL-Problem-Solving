@@ -7,3 +7,11 @@ FROM employees1 e
 LEFT JOIN departments d
 ON e.department_id = d.department_id
 ORDER BY e.emp_name;
+
+
+-- 2: Requirements
+-- Show all employees, even if they don't have a matching department.
+-- Return only employees whose salary is at least 60,000.
+-- Sort by:
+-- e.salary (descending)
+-- e.emp_name (ascending)
