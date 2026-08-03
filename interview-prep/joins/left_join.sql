@@ -37,3 +37,12 @@ LEFT JOIN departments d
 ON e.department_id = d.department_id
 WHERE d.department_name IS NULL
 ORDER BY e.emp_name;
+
+
+-- 4: Requirements
+-- Show all departments, even if they have no employees.
+-- Use the alias:
+-- employee_count
+-- Sort by:
+-- employee_count (descending)
+-- d.department_name (ascending)
