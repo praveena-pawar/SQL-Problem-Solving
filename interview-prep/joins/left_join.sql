@@ -21,3 +21,13 @@ LEFT JOIN departments d
 ON e.department_id = d.department_id
 WHERE salary >= 60000
 ORDER BY e.salary DESC, e.emp_name;
+
+
+-- 3: Display:
+-- e.emp_name
+-- d.department_name
+-- Return only employees who do not belong to any department.
+-- 33: Display:
+-- e.emp_name
+-- d.department_name
+-- Return only employees who do not belong to any department.
