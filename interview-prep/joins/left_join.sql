@@ -31,3 +31,9 @@ ORDER BY e.salary DESC, e.emp_name;
 -- e.emp_name
 -- d.department_name
 -- Return only employees who do not belong to any department.
+SELECT e.emp_name, d.department_name
+FROM employees1 e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+WHERE d.department_name IS NULL
+ORDER BY e.emp_name;
