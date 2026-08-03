@@ -79,3 +79,27 @@ GROUP BY d.department_id
 HAVING COUNT(e.emp_id) >= 2
 	AND SUM(e.salary) > 120000
 ORDER BY total_salary DESC, d.department_name;
+
+
+-- 6: Consider only employees:
+-- whose salary is between 50,000 and 80,000 (inclusive)
+-- hired on or after '2020-01-01'
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is between 2 and 4 (inclusive)
+-- average_salary is greater than or equal to 60,000
+-- lowest_salary is greater than 50,000
+SELECT d.department_name, 
+	COUNT(e.emp_id) AS employee_count,
+    ROUND(AVG(e.salary), 2) AS average_salary,
+    MIN(e.salary) AS lowest_salary
+FROM employees1 e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+WHERE salary BETWEEN 50000 AND 80000
+	AND hire_date >= '2020-01-01'
+GROUP BY d.department_id, d.department_name
+HAVING COUNT(e.emp_id) BETWEEN 2 AND 4
+	AND AVG(e.salary) >= 60000
+    AND MIN(e.salary) > 50000
+ORDER BY average_salary DESC, lowest_salary DESC, department_name;
