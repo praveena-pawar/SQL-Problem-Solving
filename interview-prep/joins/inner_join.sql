@@ -59,7 +59,7 @@ WHERE d.department_name IN ('Engineering', 'HR')
 ORDER BY d.department_name, e.salary DESC, e.emp_name;
 
 
--- 29: Requirements
+-- 5: Requirements
 -- Consider only employees:
 -- hired before '2023-01-01'
 -- with salary at least 50,000
