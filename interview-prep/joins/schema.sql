@@ -35,3 +35,6 @@ INSERT INTO employees1 VALUES
 
 SELECT * FROM employees1;
 SELECT * FROM departments;
+
+INSERT INTO employees1 VALUES
+(7, 'George', 105, 65000, '2022-09-15');
