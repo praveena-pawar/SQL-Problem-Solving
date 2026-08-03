@@ -15,3 +15,9 @@ ORDER BY e.emp_name;
 -- Sort by:
 -- e.salary (descending)
 -- e.emp_name (ascending)
+SELECT e.emp_name, d.department_name, e.salary
+FROM employees1 e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+WHERE salary >= 60000
+ORDER BY e.salary DESC, e.emp_name;
