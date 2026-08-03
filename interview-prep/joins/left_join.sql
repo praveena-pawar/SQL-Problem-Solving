@@ -46,3 +46,10 @@ ORDER BY e.emp_name;
 -- Sort by:
 -- employee_count (descending)
 -- d.department_name (ascending)
+SELECT d.department_name,
+       COUNT(e.emp_id) AS employee_count
+FROM departments d
+LEFT JOIN employees1 e
+ON d.department_id = e.department_id
+GROUP BY d.department_id, d.department_name
+ORDER BY employee_count DESC, d.department_name;
