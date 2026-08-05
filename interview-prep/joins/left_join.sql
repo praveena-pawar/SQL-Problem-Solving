@@ -53,3 +53,14 @@ LEFT JOIN employees1 e
 ON d.department_id = e.department_id
 GROUP BY d.department_id, d.department_name
 ORDER BY employee_count DESC, d.department_name;
+
+
+
+-- 5: Requirements
+-- Show all departments, even if they have no employees.
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is 0 or at least 2.
+-- Use the aliases:
+-- employee_count
+-- average_salary
