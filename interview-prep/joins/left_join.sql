@@ -77,7 +77,7 @@ ORDER BY employee_count DESC, d.department_name;
 
 
 
--- 36: Requirements
+-- 6: Requirements
 -- Show all departments, even if they have no employees.
 -- Consider only employees whose salary is greater than or equal to 50,000.
 -- Show only departments where:
@@ -86,3 +86,15 @@ ORDER BY employee_count DESC, d.department_name;
 -- employee_count
 -- total_salary
 -- highest_salary
+SELECT d.department_name, 
+		COUNT(e.emp_id) AS employee_count,
+		SUM(e.salary) AS total_salary,
+        MAX(e.salary) AS highest_salary
+FROM departments d
+LEFT JOIN employees1 e 
+ON e.department_id = d.department_id
+AND e.salary >= 50000
+GROUP BY d.department_id, d.department_name
+HAVING COUNT(e.emp_id) = 0 OR 
+		COUNT(e.emp_id) >= 2
+ORDER BY employee_count DESC, total_salary DESC, d.department_name;
