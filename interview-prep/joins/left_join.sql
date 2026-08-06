@@ -64,3 +64,13 @@ ORDER BY employee_count DESC, d.department_name;
 -- Use the aliases:
 -- employee_count
 -- average_salary
+SELECT d.department_name, 
+		COUNT(e.emp_id) AS employee_count,
+		ROUND(AVG(e.salary), 2) AS average_salary
+FROM departments d
+LEFT JOIN employees1 e
+ON e.department_id = d.department_id
+GROUP BY d.department_id, d.department_name
+HAVING COUNT(e.emp_id) = 0 OR 
+		COUNT(e.emp_id) >= 2
+ORDER BY employee_count DESC, d.department_name;
