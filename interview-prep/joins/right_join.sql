@@ -21,3 +21,16 @@ ON e.department_id = d.department_id
 They produce the same result.
 Why?
 Because in both cases, you're preserving all departments.
+
+
+
+-- 1: Question
+-- Display:
+-- e.emp_name
+-- d.department_name
+-- Show all departments, even if they have no employees.
+SELECT e.emp_name, d.department_name
+FROM employees1 e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id
+ORDER BY d.department_name, e.emp_name;
