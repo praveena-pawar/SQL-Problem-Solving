@@ -1,0 +1,3 @@
+-- Q: WHAT IS RIGHT JOIN ?
+-- RIGHT JOIN returns all rows from the RIGHT table, along with matching rows from the LEFT table. 
+-- If there's no match, the LEFT table columns are NULL.
