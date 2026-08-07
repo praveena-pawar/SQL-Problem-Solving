@@ -39,3 +39,13 @@ ORDER BY d.department_name, e.emp_name;
 
 
 
+
+-- 2: Requirements
+-- Show all departments, even if they have no employees.
+-- Consider only employees whose salary is greater than or equal to 50,000.
+-- average_salary should be rounded to 2 decimal places.
+-- Show only departments where:
+-- employee_count is 0 or at least 2.
+-- Use the aliases:
+-- employee_count
+-- average_salary
