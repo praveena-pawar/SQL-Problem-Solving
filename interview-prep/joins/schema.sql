@@ -38,3 +38,17 @@ SELECT * FROM departments;
 
 INSERT INTO employees1 VALUES
 (7, 'George', 105, 65000, '2022-09-15');
+
+
+
+
+-- =============================================================
+
+-- SCHEMA FOR SELF JOIN
+
+
+CREATE TABLE employees2 (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    manager_id INT
+);
