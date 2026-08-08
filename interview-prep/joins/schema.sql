@@ -52,3 +52,12 @@ CREATE TABLE employees2 (
     emp_name VARCHAR(50),
     manager_id INT
 );
+
+
+INSERT INTO employees2 VALUES
+(1, 'Alice', NULL),
+(2, 'Bob', 1),
+(3, 'Charlie', 1),
+(4, 'David', 2),
+(5, 'Eva', 2),
+(6, 'Frank', 3);
