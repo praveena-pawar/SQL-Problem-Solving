@@ -29,3 +29,11 @@ JOIN employees2 m
     ON e.manager_id = m.emp_id
 GROUP BY  m.emp_id, m.emp_name
 ORDER BY number_of_employees DESC, manager_name;
+
+
+
+-- 3: Requirements
+-- Show all employees, including employees who do not have a manager.
+-- If an employee has no manager, manager_name should be NULL.
+-- Sort by:
+-- employee_name (ascending)
