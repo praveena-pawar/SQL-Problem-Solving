@@ -1,0 +1,4 @@
+-- 1: Display:
+-- e.emp_name
+-- d.department_name
+-- Return every possible combination of employees and departments.
