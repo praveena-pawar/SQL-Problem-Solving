@@ -21,3 +21,11 @@ ORDER BY employee_name;
 -- Sort by:
 -- number_of_employees (descending)
 -- manager_name (ascending)
+SELECT
+    m.emp_name AS manager_name,
+	COUNT(e.emp_id) AS number_of_employees
+FROM employees2 e
+JOIN employees2 m
+    ON e.manager_id = m.emp_id
+GROUP BY  m.emp_id, m.emp_name
+ORDER BY number_of_employees DESC, manager_name;
