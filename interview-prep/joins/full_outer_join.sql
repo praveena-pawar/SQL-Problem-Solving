@@ -1,0 +1,7 @@
+-- 39: Display:
+-- e.emp_name
+-- d.department_name
+-- Show:
+-- all employees,
+-- all departments,
+-- even if there is no matching record. 
