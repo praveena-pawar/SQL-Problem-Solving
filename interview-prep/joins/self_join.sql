@@ -37,3 +37,10 @@ ORDER BY number_of_employees DESC, manager_name;
 -- If an employee has no manager, manager_name should be NULL.
 -- Sort by:
 -- employee_name (ascending)
+SELECT
+    e.emp_name AS employee_name,
+    m.emp_name AS manager_name
+FROM employees2 e
+LEFT JOIN employees2 m
+    ON e.manager_id = m.emp_id
+ORDER BY employee_name;
