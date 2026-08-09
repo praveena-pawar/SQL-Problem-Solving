@@ -61,3 +61,16 @@ INSERT INTO employees2 VALUES
 (4, 'David', 2),
 (5, 'Eva', 2),
 (6, 'Frank', 3);
+
+
+
+
+-- =========================================================
+-- Mixed JOIN
+
+use interview;
+CREATE TABLE locations (
+    department_id INT,
+    city VARCHAR(50),
+    country VARCHAR(50)
+);
