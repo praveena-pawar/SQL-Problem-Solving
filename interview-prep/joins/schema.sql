@@ -74,3 +74,10 @@ CREATE TABLE locations (
     city VARCHAR(50),
     country VARCHAR(50)
 );
+
+
+INSERT INTO locations VALUES
+(101, 'Bangalore', 'India'),
+(102, 'Mumbai', 'India'),
+(103, 'Delhi', 'India'),
+(104, 'Hyderabad', 'India');
