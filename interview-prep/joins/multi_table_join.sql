@@ -37,3 +37,18 @@ ORDER BY d.department_name, e.salary DESC, e.emp_name;
 -- Show only departments where:
 -- employee_count is at least 2
 -- total_salary is greater than 120,000
+SELECT l.country, 
+	   d.department_name, 
+       COUNT(e.emp_id) AS employee_count,
+       SUM(e.salary) AS total_salary
+FROM employees1 e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+INNER JOIN locations l
+ON l.department_id = d.department_id
+WHERE e.salary >= 50000
+GROUP BY l.country, d.department_id, d.department_name
+HAVING COUNT(e.emp_id) >= 2
+		AND 
+        SUM(e.salary) > 120000
+ORDER BY total_salary DESC, department_name;
