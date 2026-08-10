@@ -52,3 +52,15 @@ HAVING COUNT(e.emp_id) >= 2
 		AND 
         SUM(e.salary) > 120000
 ORDER BY total_salary DESC, department_name;
+
+
+
+-- 4: Requirements
+-- Consider only employees who:
+-- were hired on or after '2020-01-01'
+-- have salary between 50,000 and 90,000 inclusive
+-- Show only departments where:
+-- employee_count >= 2
+-- average_salary >= 60,000
+-- highest_salary >= 75,000
+-- Round average_salary to 2 decimal places.
