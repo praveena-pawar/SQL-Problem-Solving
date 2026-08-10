@@ -29,3 +29,11 @@ WHERE d.department_name IN ('Engineering', 'HR')
         AND 
         country = 'India'
 ORDER BY d.department_name, e.salary DESC, e.emp_name;
+
+
+-- 3: Requirements
+-- Show only employees with salary at least 50,000.
+-- Consider only departments located in India.
+-- Show only departments where:
+-- employee_count is at least 2
+-- total_salary is greater than 120,000
