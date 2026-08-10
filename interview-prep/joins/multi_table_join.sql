@@ -84,3 +84,15 @@ HAVING COUNT(e.emp_id) >= 2
         AND 
         MAX(e.salary) >= 75000
 ORDER BY average_salary DESC, highest_salary DESC, department_name;
+
+
+
+-- 5: Requirements
+-- Show ALL departments, including departments that have:
+-- no employees
+-- or only employees earning below 50,000
+-- For the employee calculations, consider only employees with salary >= 50,000.
+-- Show only departments where:
+-- employee_count = 0
+-- OR
+-- employee_count >= 2
