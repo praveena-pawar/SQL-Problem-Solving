@@ -64,3 +64,23 @@ ORDER BY total_salary DESC, department_name;
 -- average_salary >= 60,000
 -- highest_salary >= 75,000
 -- Round average_salary to 2 decimal places.
+SELECT  d.department_name, 
+		l.city,
+       COUNT(e.emp_id) AS employee_count,
+       ROUND(AVG(e.salary), 2) AS average_salary,
+       MAX(e.salary) AS highest_salary
+FROM employees1 e
+INNER JOIN departments d
+ON e.department_id = d.department_id
+INNER JOIN locations l
+ON l.department_id = d.department_id
+WHERE hire_date >= '2020-01-01'
+	  AND 
+      e.salary BETWEEN 50000 AND 90000
+GROUP BY l.city, d.department_id, d.department_name
+HAVING COUNT(e.emp_id) >= 2
+		AND 
+        ROUND(AVG(e.salary), 2) >= 60000
+        AND 
+        MAX(e.salary) >= 75000
+ORDER BY average_salary DESC, highest_salary DESC, department_name;
