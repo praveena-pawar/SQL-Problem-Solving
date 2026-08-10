@@ -96,3 +96,20 @@ ORDER BY average_salary DESC, highest_salary DESC, department_name;
 -- employee_count = 0
 -- OR
 -- employee_count >= 2
+SELECT  d.department_name, 
+		l.city,
+       COUNT(e.emp_id) AS employee_count,
+       SUM(e.salary) AS total_salary
+FROM employees1 e
+RIGHT JOIN departments d
+	ON e.department_id = d.department_id
+	AND e.salary >= 50000
+LEFT JOIN locations l
+	ON l.department_id = d.department_id
+GROUP BY l.city, d.department_id, d.department_name
+HAVING COUNT(e.emp_id) = 0
+		OR 
+        COUNT(e.emp_id) >= 2
+ORDER BY employee_count DESC, 
+		 total_salary DESC, 
+         department_name;
