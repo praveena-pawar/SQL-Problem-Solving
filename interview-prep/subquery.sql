@@ -3,3 +3,13 @@
 -- Display:
 -- emp_name
 -- salary
+SELECT
+    emp_name,
+    salary
+FROM employees1
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees1
+)
+ORDER BY salary DESC,
+         emp_name ASC;
