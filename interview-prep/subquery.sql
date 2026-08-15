@@ -14,4 +14,4 @@ WHERE salary > (
 ORDER BY salary DESC,
          emp_name ASC;
 
-         
+
