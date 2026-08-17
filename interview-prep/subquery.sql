@@ -15,3 +15,9 @@ ORDER BY salary DESC,
          emp_name ASC;
 
 
+
+-- 2: Find all employees who work in departments whose average salary is greater than 60,000.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
