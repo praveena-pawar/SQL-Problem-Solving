@@ -47,3 +47,20 @@ ORDER BY
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+JOIN departments d
+    ON e.department_id = d.department_id
+WHERE e.department_id NOT IN (
+    SELECT department_id
+    FROM employees1
+    GROUP BY department_id
+    HAVING AVG(salary) > 60000
+)
+ORDER BY
+    e.department_id ASC,
+    e.salary DESC,
+    e.emp_name ASC;
