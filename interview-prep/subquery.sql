@@ -38,3 +38,12 @@ ORDER BY
     e.department_id ASC,
     e.salary DESC,
     e.emp_name ASC;
+
+
+
+-- 3: Question
+-- Find all employees who do not belong to any department whose average salary is greater than 60,000.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
