@@ -19,3 +19,10 @@ INSERT INTO employees VALUES
 (6, 'Frank', 101, 55000, '2022-08-14');
 
 SELECT * FROM employees;
+
+
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    emp_id INT,
+    order_amount DECIMAL(10,2)
+);
