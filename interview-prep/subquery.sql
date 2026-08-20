@@ -64,3 +64,11 @@ ORDER BY
     e.department_id ASC,
     e.salary DESC,
     e.emp_name ASC;
+
+
+
+-- 4: Question
+-- Find all employees from employees1 who have at least one order in the orders table.
+-- Display:
+-- emp_name
+-- salary
