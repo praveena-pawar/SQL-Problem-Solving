@@ -72,3 +72,12 @@ ORDER BY
 -- Display:
 -- emp_name
 -- salary
+SELECT
+    e.emp_name,
+    e.salary
+FROM employees1 e
+WHERE EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.emp_id = e.emp_id
+);
