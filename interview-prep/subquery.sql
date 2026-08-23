@@ -81,3 +81,11 @@ WHERE EXISTS (
     FROM orders o
     WHERE o.emp_id = e.emp_id
 );
+
+
+
+
+-- 5: Find all employees who have never placed an order.
+-- Display:
+-- emp_name
+-- salary
