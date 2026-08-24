@@ -98,3 +98,12 @@ WHERE NOT EXISTS (
     FROM orders o
     WHERE o.emp_id = e.emp_id
 );
+
+
+
+-- 6: Question
+-- Find employees whose salary is greater than the average salary of their own department.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
