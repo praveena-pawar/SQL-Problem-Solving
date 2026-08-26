@@ -107,3 +107,13 @@ WHERE NOT EXISTS (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+WHERE e.salary > (
+    SELECT AVG(e2.salary)
+    FROM employees1 e2
+    WHERE e2.department_id = e.department_id
+);
