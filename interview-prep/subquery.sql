@@ -117,3 +117,12 @@ WHERE e.salary > (
     FROM employees1 e2
     WHERE e2.department_id = e.department_id
 );
+
+
+
+7: Question
+Find the department with the highest average salary.
+Return:
+department_id
+average_salary
+Round average_salary to 2 decimal places.
