@@ -120,9 +120,28 @@ WHERE e.salary > (
 
 
 
-7: Question
-Find the department with the highest average salary.
-Return:
-department_id
-average_salary
-Round average_salary to 2 decimal places.
+-- 7: Question
+-- Find the department with the highest average salary.
+-- Return:
+-- department_id
+-- average_salary
+-- Round average_salary to 2 decimal places.
+SELECT
+    department_id,
+    average_salary
+FROM (
+    SELECT
+        department_id,
+        ROUND(AVG(salary), 2) AS average_salary
+    FROM employees1
+    GROUP BY department_id
+) AS department_avg
+WHERE average_salary = (
+    SELECT MAX(average_salary)
+    FROM (
+        SELECT
+            ROUND(AVG(salary), 2) AS average_salary
+        FROM employees1
+        GROUP BY department_id
+    ) AS averages
+);
