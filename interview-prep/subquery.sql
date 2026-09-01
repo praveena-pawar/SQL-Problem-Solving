@@ -151,7 +151,6 @@ WHERE average_salary = (
 
 -- 8: Question
 -- Find all employees who earn more than the average salary of employees in departments whose average salary is greater than 60,000.
-
 -- Display:
 -- emp_name
 -- department_id
