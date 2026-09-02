@@ -170,3 +170,12 @@ WHERE salary > (
         HAVING AVG(salary) > 60000
     )
 );
+
+
+
+-- 9: Question
+-- Find employees whose salary is greater than the salary of every employee in department 101.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
