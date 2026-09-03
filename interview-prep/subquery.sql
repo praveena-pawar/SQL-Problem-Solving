@@ -179,3 +179,13 @@ WHERE salary > (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    emp_name,
+    department_id,
+    salary
+FROM employees1
+WHERE salary > ALL (
+    SELECT salary
+    FROM employees1
+    WHERE department_id = 101
+);
