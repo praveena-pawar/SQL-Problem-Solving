@@ -189,3 +189,23 @@ WHERE salary > ALL (
     FROM employees1
     WHERE department_id = 101
 );
+
+
+
+
+-- 10: Question
+-- Find employees whose salary is greater than the salary of at least one employee in department 101.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
+SELECT
+    emp_name,
+    department_id,
+    salary
+FROM employees1
+WHERE salary > ANY (
+    SELECT salary
+    FROM employees1
+    WHERE department_id = 101
+);
