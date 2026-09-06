@@ -209,3 +209,12 @@ WHERE salary > ANY (
     FROM employees1
     WHERE department_id = 101
 );
+
+
+
+
+-- 11: Find all employees whose salary is greater than the maximum salary of their own department.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
