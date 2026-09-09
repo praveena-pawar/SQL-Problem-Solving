@@ -228,3 +228,12 @@ WHERE e.salary > (
     FROM employees1 e2
     WHERE e2.department_id = e.department_id
 );
+
+
+
+
+-- 12: Find the employees who work in the department with the highest total salary.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
