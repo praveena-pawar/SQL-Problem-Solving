@@ -237,3 +237,21 @@ WHERE e.salary > (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    emp_name,
+    department_id,
+    salary
+FROM employees1
+WHERE department_id IN (
+    SELECT department_id
+    FROM employees1
+    GROUP BY department_id
+    HAVING SUM(salary) = (
+        SELECT MAX(total_salary)
+        FROM (
+            SELECT SUM(salary) AS total_salary
+            FROM employees1
+            GROUP BY department_id
+        ) AS department_totals
+    )
+);
