@@ -255,3 +255,12 @@ WHERE department_id IN (
         ) AS department_totals
     )
 );
+
+
+
+
+-- 13: Find all employees who have placed orders, but every order they placed is less than 50,000.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
