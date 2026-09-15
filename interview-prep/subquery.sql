@@ -264,3 +264,19 @@ WHERE department_id IN (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+WHERE EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.emp_id = e.emp_id
+)
+AND NOT EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.emp_id = e.emp_id
+      AND o.order_amount >= 50000
+);
