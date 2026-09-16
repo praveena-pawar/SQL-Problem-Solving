@@ -280,3 +280,12 @@ AND NOT EXISTS (
     WHERE o.emp_id = e.emp_id
       AND o.order_amount >= 50000
 );
+
+
+
+
+-- 14: Find employees who have placed more orders than the average number of orders placed per employee among employees who have placed at least one order.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
