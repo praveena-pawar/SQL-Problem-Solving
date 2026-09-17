@@ -289,3 +289,26 @@ AND NOT EXISTS (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+JOIN (
+    SELECT
+        emp_id,
+        COUNT(*) AS order_count
+    FROM orders
+    GROUP BY emp_id
+) AS employee_orders
+    ON e.emp_id = employee_orders.emp_id
+WHERE employee_orders.order_count > (
+    SELECT AVG(order_count)
+    FROM (
+        SELECT
+            emp_id,
+            COUNT(*) AS order_count
+        FROM orders
+        GROUP BY emp_id
+    ) AS order_counts
+);
