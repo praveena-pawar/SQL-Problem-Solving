@@ -312,3 +312,14 @@ WHERE employee_orders.order_count > (
         GROUP BY emp_id
     ) AS order_counts
 );
+
+
+
+
+
+-- 15: Find employees who have never placed an order.
+-- Use a subquery with NOT IN.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
