@@ -323,3 +323,12 @@ WHERE employee_orders.order_count > (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    emp_name,
+    department_id,
+    salary
+FROM employees1
+WHERE emp_id NOT IN (
+    SELECT emp_id
+    FROM orders
+);
