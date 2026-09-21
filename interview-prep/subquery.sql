@@ -332,3 +332,12 @@ WHERE emp_id NOT IN (
     SELECT emp_id
     FROM orders
 );
+
+
+
+
+-- 16: Find employees who have placed more orders than every other employee in their own department.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
