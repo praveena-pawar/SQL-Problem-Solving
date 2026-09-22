@@ -341,3 +341,25 @@ WHERE emp_id NOT IN (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+JOIN (
+    SELECT
+        emp_id,
+        COUNT(*) AS order_count
+    FROM orders
+    GROUP BY emp_id
+) eo
+    ON e.emp_id = eo.emp_id
+WHERE eo.order_count > ALL (
+    SELECT COUNT(o2.emp_id)
+    FROM employees1 e2
+    LEFT JOIN orders o2
+        ON e2.emp_id = o2.emp_id
+    WHERE e2.department_id = e.department_id
+      AND e2.emp_id <> e.emp_id
+    GROUP BY e2.emp_id
+);
