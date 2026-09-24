@@ -363,3 +363,15 @@ WHERE eo.order_count > ALL (
       AND e2.emp_id <> e.emp_id
     GROUP BY e2.emp_id
 );
+
+
+
+
+
+
+-- 17: Now let's remove the JOINs completely.
+-- Find employees whose salary is greater than the salary of every other employee in their own department.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
