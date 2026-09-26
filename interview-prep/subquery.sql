@@ -386,3 +386,13 @@ WHERE e.salary > ALL (
     WHERE e2.department_id = e.department_id
       AND e2.emp_id <> e.emp_id
 );
+
+
+
+
+
+-- 18: Find employees who have placed at least one order whose amount is greater than the average order amount of all orders placed by employees in their own department.
+-- Display:
+-- emp_name
+-- department_id
+-- salary
