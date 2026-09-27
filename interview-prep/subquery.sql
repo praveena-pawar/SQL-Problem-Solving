@@ -396,3 +396,22 @@ WHERE e.salary > ALL (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+WHERE EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.emp_id = e.emp_id
+      AND o.order_amount > (
+          SELECT AVG(o2.order_amount)
+          FROM orders o2
+          WHERE o2.emp_id IN (
+              SELECT e2.emp_id
+              FROM employees1 e2
+              WHERE e2.department_id = e.department_id
+          )
+      )
+);
