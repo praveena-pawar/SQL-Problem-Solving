@@ -424,7 +424,41 @@ WHERE EXISTS (
 -- emp_name
 -- department_id
 -- salary
+SELECT
+    e.emp_name,
+    e.department_id,
+    e.salary
+FROM employees1 e
+WHERE e.salary > (
+    SELECT AVG(e2.salary)
+    FROM employees1 e2
+    WHERE e2.department_id = e.department_id
+)
 
+AND EXISTS (
+    SELECT 1
+    FROM orders o
+    WHERE o.emp_id = e.emp_id
+)
 
-
+AND (
+    SELECT COUNT(*)
+    FROM orders o1
+    WHERE o1.emp_id = e.emp_id
+) > (
+    SELECT AVG(
+        (
+            SELECT COUNT(*)
+            FROM orders o2
+            WHERE o2.emp_id = e2.emp_id
+        )
+    )
+    FROM employees1 e2
+    WHERE e2.department_id = e.department_id
+      AND EXISTS (
+          SELECT 1
+          FROM orders o3
+          WHERE o3.emp_id = e2.emp_id
+      )
+);
 
