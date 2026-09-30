@@ -24,5 +24,5 @@ SELECT * FROM employees;
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
     emp_id INT,
-    order_amount DECIMAL(20, 2)
+    order_amount DECIMAL(10, 2)
 );
