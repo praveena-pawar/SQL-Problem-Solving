@@ -390,7 +390,6 @@ WHERE e.salary > ALL (
 
 
 
-
 -- 18: Find employees who have placed at least one order whose amount is greater than the average order amount of all orders placed by employees in their own department.
 -- Display:
 -- emp_name
