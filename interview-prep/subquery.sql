@@ -419,7 +419,6 @@ WHERE EXISTS (
 
 
 
-
 -- 19: Find employees whose salary is greater than the average salary of their department AND who have placed more orders than the average number of orders per employee among employees in their department who have placed at least one order.
 -- Display:
 -- emp_name
