@@ -459,6 +459,7 @@ AND (
           SELECT 1
           FROM orders o3
           WHERE o3.emp_id = e2.emp_id
+          
       )
 );
 
