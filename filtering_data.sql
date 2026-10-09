@@ -392,7 +392,6 @@ WHERE salary = (SELECT max(salary)
 
 
 
-
 -- 32 — Second Highest Salary
 SELECT MAX(salary)
 FROM employees
@@ -466,3 +465,4 @@ HAVING COUNT(e.emp_id) > (
         GROUP BY department_id
     ) AS dept_counts
 );
+
