@@ -22,3 +22,19 @@ SELECT
     average_salary
 FROM department_avg
 ORDER BY average_salary DESC, department_id ASC;
+
+
+
+-- 2: Find departments whose average salary is greater than ₹60,000.
+-- Display:
+-- department_id
+-- average_salary
+-- employee_count
+
+-- Requirements:
+-- Use a CTE named department_stats.
+-- Calculate the average salary using AVG(salary).
+-- Calculate the number of employees using COUNT(*).
+-- Round the average salary to 2 decimal places.
+-- Return only departments whose average salary is greater than 60000.
+-- Sort by average_salary DESC, then department_id ASC.
