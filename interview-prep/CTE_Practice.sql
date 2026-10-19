@@ -38,3 +38,18 @@ ORDER BY average_salary DESC, department_id ASC;
 -- Round the average salary to 2 decimal places.
 -- Return only departments whose average salary is greater than 60000.
 -- Sort by average_salary DESC, then department_id ASC.
+WITH department_stats AS (
+    SELECT
+        department_id,
+        ROUND(AVG(salary), 2) AS average_salary,
+        COUNT(*) AS employee_count
+    FROM employees
+    GROUP BY department_id
+)
+SELECT
+    department_id,
+    average_salary,
+    employee_count
+FROM department_stats
+WHERE average_salary > 60000
+ORDER BY average_salary DESC, department_id ASC;
